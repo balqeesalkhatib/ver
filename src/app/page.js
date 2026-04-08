@@ -1,7 +1,7 @@
 import React from 'react'
 import Link from "next/link";
 const Home = async () => {
-  const res = await fetch("http://localhost:3000/api/posts", { cache: "no-store" })
+  const res = await fetch("api/posts", { cache: "no-store" })
   const posts = await res.json()
   return (
     <div>
