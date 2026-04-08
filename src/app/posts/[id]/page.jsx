@@ -2,7 +2,7 @@ import React from 'react'
 import "@/app/globals.css"
 export async function generateMetadata({ params }) {
     const { id } = await params;
-    const res = await fetch("api/posts", { cache: "no-store" });
+    const res = await fetch(`https://ver-tyxi.vercel.app/api/posts`, { cache: "no-store" });
     const posts = await res.json();
     const post = posts.find((p) => p.id === +id);
     return {
@@ -11,7 +11,7 @@ export async function generateMetadata({ params }) {
     };
 }
 const page = async (props) => {
-    const res = await fetch("api/posts", { cache: "no-store" });
+    const res = await fetch(`https://ver-tyxi.vercel.app/api/posts`, { cache: "no-store" });
     const posts = await res.json();
     const { id } = await props.params;
     const onePost = posts.find((elem) => elem.id === +id);
